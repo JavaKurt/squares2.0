@@ -1,4 +1,4 @@
-package kurtis.sq;
+package src.kurtis.sq;
 
 import java.awt.Canvas;
 import java.awt.Color;
@@ -35,6 +35,7 @@ public class Game extends Canvas implements Runnable{
         Select,
         Help,
         Game,
+        Win,
         End, 
         Shop
     };
@@ -75,7 +76,7 @@ public class Game extends Canvas implements Runnable{
                 //handler.addObject(new menuParticle(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.menuParticle, handler));
             }
         }
-        
+       
         
         // ---- HOW WOULD I ADD A POINT SYSTEM/
         // THE LONGER YOU LAST, THE MORE POINTS YOU GET?
@@ -153,6 +154,10 @@ public class Game extends Canvas implements Runnable{
                     gameState = STATE.End;
                     handler.clearEnemys();
                 }
+                else if(hud.getLevel() == 20) {
+                	gameState = STATE.Win;
+                	handler.clearEnemys();
+                }
         		
         	}
         }
@@ -191,7 +196,7 @@ public class Game extends Canvas implements Runnable{
         } else  if(gameState == STATE.Shop) {
         	shop.render(g);
         }
-        	else if(gameState == STATE.Menu || gameState == STATE.Help || gameState == STATE.End || gameState == STATE.Select){
+        	else if(gameState == STATE.Menu || gameState == STATE.Help || gameState == STATE.End || gameState == STATE.Select || gameState == STATE.Win){
             menu.render(g);
           //renders all of the objects in the handler class
             handler.render(g);

@@ -1,4 +1,4 @@
-package kurtis.sq;
+package src.kurtis.sq;
 
 import java.util.HashMap;
 import java.util.Map;

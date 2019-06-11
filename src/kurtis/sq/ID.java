@@ -1,4 +1,4 @@
-package kurtis.sq;
+package src.kurtis.sq;
 
 public enum ID {
     //set all of the IDs for our game
@@ -9,5 +9,9 @@ public enum ID {
     SmartEnemy(),
     enemyFirstBoss(),
     menuParticle(),
+    HorizontalEnemy(),
+    HorizontalEnemyR(),
+    verticalEnemyDown(),
+    verticalEnemyUp(),
     Trail();
 }

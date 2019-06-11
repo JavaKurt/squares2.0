@@ -1,4 +1,4 @@
-package kurtis.sq;
+package src.kurtis.sq;
 
 
 import java.awt.Color;
@@ -22,7 +22,6 @@ public class enemyProjectiles extends GameObject{
      public Rectangle getBounds(){
         return new Rectangle((int)x, (int)y, 16, 16);
     }
-
     public void tick() {
         x += velX;
         y += velY;

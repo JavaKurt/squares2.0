@@ -1,4 +1,4 @@
-package kurtis.sq;
+package src.kurtis.sq;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -19,7 +19,7 @@ public class Player extends GameObject{
     public Rectangle getBounds(){
         return new Rectangle((int)x, (int)y, 32, 32);
     }
-    
+   
 
     public void tick() {
         x += velX;
@@ -42,16 +42,19 @@ public class Player extends GameObject{
                 if(getBounds().intersects(tempObject.getBounds())){
                     //collision code
                     HUD.HEALTH -= 2;
-                    AudioPlayer.getSound("hit_music").play();
+                    //AudioPlayer.getSound("hit_music").play();
                     }
                 }
+            else if(tempObject.getId() == ID.HorizontalEnemy || tempObject.getId() == ID.HorizontalEnemyR) {
+            	if(getBounds().intersects(tempObject.getBounds())) {
+            		HUD.HEALTH -= 2;
+            		//AudioPlayer.getSound("hit_music").play();
+            	}
+            }
                 
             }
         }
-        
-    
-    
-    
+
     public void render(Graphics g) {
         g.setColor(Color.blue);
         g.fillRect((int)x, (int)y, 32 ,32);

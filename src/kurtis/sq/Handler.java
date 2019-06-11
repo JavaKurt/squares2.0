@@ -1,4 +1,4 @@
-package kurtis.sq;
+package src.kurtis.sq;
 
 //The handler class will maintain, update and render all objects to the window
 

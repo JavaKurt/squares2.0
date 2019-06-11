@@ -1,4 +1,4 @@
-package kurtis.sq;
+package src.kurtis.sq;
 
 import java.awt.AlphaComposite;
 import java.awt.Color;
@@ -31,7 +31,7 @@ public class Trail extends GameObject{
     public void tick() {
         if (alpha > life){
             // if 
-            alpha -= (life - 0.0001f);
+            alpha -= (life - 0.001f);
         } else handler.removeObject(this);
     }
 

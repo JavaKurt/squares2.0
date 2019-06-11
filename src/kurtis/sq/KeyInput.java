@@ -1,9 +1,9 @@
-package kurtis.sq;
+package src.kurtis.sq;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-import kurtis.sq.Game.STATE;
+import src.kurtis.sq.Game.STATE;
 
 
 public class KeyInput extends KeyAdapter{
@@ -12,6 +12,7 @@ public class KeyInput extends KeyAdapter{
     private boolean[] keyDown = new boolean[4];
     
     Game game;
+    HUD hud;
     
     public KeyInput(Handler handler, Game game){
         this.handler = handler;
@@ -28,7 +29,7 @@ public class KeyInput extends KeyAdapter{
         
         //sets the variable key to a letter binding, when the key is pressed, the number value which corresponds to the letter will be printed
         int key = e.getKeyCode();
-        System.out.println("ASCII key: " + key);
+        //System.out.println("ASCII key: " + key);
         
         //loop through all of the objects in a game
         for(int i = 0; i < handler.object.size(); i++){
@@ -62,6 +63,15 @@ public class KeyInput extends KeyAdapter{
         		Game.gameState = STATE.Shop;
         	} else if(Game.gameState == STATE.Shop){
         		Game.gameState = STATE.Game;
+        	}
+        }
+        if(key == KeyEvent.VK_M) {
+        	if(Game.gameState == STATE.Game) {
+        		handler.clearPlayer();
+        		hud.score = 0;
+        		hud.level = 1;
+        		handler.clearEnemys();
+        		Game.gameState = STATE.Menu;
         	}
         }
     }

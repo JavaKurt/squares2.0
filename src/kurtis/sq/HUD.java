@@ -1,4 +1,4 @@
-package kurtis.sq;
+package src.kurtis.sq;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -12,8 +12,9 @@ public class HUD {
     private float greenValue = 255;
     
 
-    private int score = 0;
-    private int level = 1;
+    static int score = 0;
+    static int level = 1;
+   
     
     public void tick(){
         //clamp prevents health from going past a certain point
@@ -25,7 +26,7 @@ public class HUD {
         
         
 
-            score++; 
+            score++;
     }
     
     public void render(Graphics g){
@@ -46,7 +47,7 @@ public class HUD {
             }
         g.drawString("Space for the shop",15, 94);
     }
-    
+   
     public void setScore(int score){
         this.score=score;
     }

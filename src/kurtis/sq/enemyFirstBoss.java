@@ -1,4 +1,4 @@
-package kurtis.sq;
+package src.kurtis.sq;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -14,6 +14,7 @@ public class enemyFirstBoss extends GameObject{
     
     private Handler handler;
     Random r = new Random();
+    private HUD hud;
     
     private int timer = 80;
     private int timer2 = 150;
@@ -48,12 +49,11 @@ public class enemyFirstBoss extends GameObject{
         }
        
         //reversing the velocity y
-        // z = velyx *-1 
         // z = -5 * -1 = 5   -- moves up   --
         // if z = 5 *-1 = -5 -- moves down --
         //if(y <= 0 || y >= Game.HEIGHT -45) velY *= -1;
         if(x <= 0 || x >= Game.WIDTH -48) velX *= -1;
-        
+      
        // handler.addObject(new Trail((int)x, (int)y, ID.Trail, Color.red, 64, 64, 0.05f, handler));
         
         

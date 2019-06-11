@@ -1,4 +1,4 @@
-package kurtis.sq;
+package src.kurtis.sq;
 
 public class todolist {
 /*
